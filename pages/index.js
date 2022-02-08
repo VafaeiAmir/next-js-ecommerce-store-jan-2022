@@ -12,10 +12,20 @@ export default function Home() {
           <meta name="description" content="Welcome to the Home Page" />
         </Head>
       </Layout>
-
-      <main className={styles.main}>
-        <img src="/HomeDesign.jpg" alt="HomeDesign" width={320} height={150} />
+      <div className={styles.freepik}>
         <a href="http://www.freepik.com">Designed by Freepik</a>
+      </div>
+      <div className={styles.img}>
+        <img src="/HomeDesign.jpg" alt="HomeDesign" width={350} height={140} />
+        <img
+          src="/HomeDesign2.jpg"
+          alt="HomeDesign2"
+          width={350}
+          height={140}
+        />
+        <img src="/Players.jpg" alt="Players" width={350} height={140} />
+      </div>
+      <main className={styles.main}>
         <h1 className={styles.title}>Still love it?</h1>
 
         <p className={styles.description}>
