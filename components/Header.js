@@ -28,8 +28,8 @@ export default function Header() {
       <Link href="./logIn">
         <a>Log In</a>
       </Link>
-      <Link href="./shopping.js">
-        <a>Shopping Cart</a>
+      <Link href="./shopping">
+        <a>Shopping</a>
       </Link>
     </header>
   );

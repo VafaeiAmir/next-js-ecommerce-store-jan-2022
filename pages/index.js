@@ -15,6 +15,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <img src="/HomeDesign.jpg" alt="HomeDesign" width={320} height={150} />
+        <a href="http://www.freepik.com">Designed by Freepik</a>
         <h1 className={styles.title}>Still love it?</h1>
 
         <p className={styles.description}>
