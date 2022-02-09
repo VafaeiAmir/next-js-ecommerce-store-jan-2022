@@ -29,7 +29,7 @@ export default function Home() {
         <h1 className={styles.title}>Still love it?</h1>
 
         <p className={styles.description}>
-          You can have it by just one click! 😊
+          You can have it by just one click! 😎
         </p>
 
         <div className={styles.grid}>
@@ -48,7 +48,7 @@ export default function Home() {
           <Link href="./playStation">
             <a className={styles.card}>
               <h2>PLAY STATION I</h2>
-              <p>The worlds first DC-CONSOLE. discover it now!</p>
+              <p>The worlds first CD-DRIVE CONSOLE. discover it now!</p>
             </a>
           </Link>
           <Link href="./sega">

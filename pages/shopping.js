@@ -5,6 +5,7 @@ export default function Shopping() {
     <Layout>
       <h1>Shopping</h1>
       <p>This is the Shopping page</p>
+      <button>Remove</button>
     </Layout>
   );
 }

@@ -10,7 +10,6 @@ export default function Sega() {
         width={200}
         height={200}
       />
-      <a href="http://www.freepik.com">Designed by Freepik</a>
       <p>This is the Mega-Drive page</p>
       <button>Add to shop</button>
     </Layout>
