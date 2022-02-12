@@ -16,7 +16,7 @@ const headerStyles = (DarkMode) => {
     display: flex;
     justify-content: right;
     a + a {
-      margin-left: 40px;
+      margin-left: 30px;
     }
   `;
 };
@@ -45,8 +45,8 @@ export default function Header() {
       <Link href="/">
         <a>Home</a>
       </Link>
-      <Link href="./contact">
-        <a>Contact</a>
+      <Link href="/products">
+        <a>Products</a>
       </Link>
       <Link href="./logIn">
         <a>Log In</a>
