@@ -1,9 +1,18 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../../components/Layout';
+import { Product } from '../../components/Product';
 import productsDatabase from '../../util/database';
 
+const productPrice = {
+  currency: 'eur',
+  unitAmount: 20000,
+};
+
 export default function SingleProduct(props) {
+  function handleClick() {
+    console.log('buy');
+  }
   return (
     <Layout>
       <Head>
@@ -13,8 +22,13 @@ export default function SingleProduct(props) {
         <meta description={`${props.product.name} `} />
       </Head>
       <h1>{props.product.name}</h1>
-      <Image src={`/public/${props.product.id}.jpg`} width="200" height="200" />
-      <div>id: {props.product.id}</div>
+      <h2>{props.product.text}</h2>
+      <Image
+        src={`/product-pic/${props.product.id}.jpg`}
+        width="200"
+        height="200"
+      />
+      <Product clickHandler={() => handleClick} productPrice={productPrice} />
       <div>name: {props.product.name}</div>
     </Layout>
   );

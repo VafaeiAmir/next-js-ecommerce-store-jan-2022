@@ -42,17 +42,14 @@ export default function Header() {
         Dark {darkMode ? 'on' : 'off'}
       </button>
       <a> </a>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
       <Link href="/products">
-        <a>Products</a>
+        <a>Home</a>
       </Link>
       <Link href="./logIn">
         <a>Log In</a>
       </Link>
-      <Link href="./shopping">
-        <a>Shopping</a>
+      <Link href="./Cart">
+        <a>Cart</a>
       </Link>
     </header>
   );
