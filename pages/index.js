@@ -12,7 +12,7 @@ import productsDatabase from '../util/database';
 `; */
 
 export default function Products(props) {
-  console.log('props', JSON.stringify(props, 2));
+  console.log('props', JSON.stringify(props, null, 2));
   return (
     <Layout>
       <div className={styles.freepik}>

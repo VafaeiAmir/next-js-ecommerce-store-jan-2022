@@ -14,7 +14,7 @@ export function Product({ clickHandler, productPrice }) {
         This is a one time payment <span>product</span>.
       </p>
       <div>
-        <img src="/product-pic/.jpg" alt="" />
+        <img src="/product-pic/.jpg" alt="product-pics" />
         <Counter currentValue={quantity} newValueSetter={setQuantity} />
       </div>
       <button

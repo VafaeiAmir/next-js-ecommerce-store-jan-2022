@@ -28,7 +28,7 @@ export default function SingleProduct(props) {
         width="200"
         height="200"
       />
-      <Product clickHandler={() => handleClick} productPrice={productPrice} />
+      <Product clickHandler={() => handleClick()} productPrice={productPrice} />
       <div>name: {props.product.name}</div>
     </Layout>
   );
