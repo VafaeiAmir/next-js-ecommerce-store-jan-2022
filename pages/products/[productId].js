@@ -1,20 +1,27 @@
+import Cookies from 'js-cookie';
 import Head from 'next/head';
 import Image from 'next/image';
+import { useState } from 'react';
 import Layout from '../../components/Layout';
 import { Product } from '../../components/Product';
 import productsDatabase from '../../util/database';
 
-const productPrice = {
+const productAmount = {
   currency: 'eur',
   unitAmount: 20000,
 };
 
 export default function SingleProduct(props) {
-  function handleClick() {
-    console.log('buy');
+  const cookieValue = JSON.parse(Cookies.get('Cart') || '0');
+  const [quantity, setQuantity] = useState(cookieValue || 0);
+
+  function handleClick(mode, price, cartQuantity) {
+    // console.log('buy');
+    Cookies.set('Cart', JSON.stringify(cartQuantity));
+    console.log('quantity', cartQuantity);
   }
   return (
-    <Layout>
+    <Layout quantity={quantity}>
       <Head>
         <title>
           {props.product.name} ({props.product.id})
@@ -28,8 +35,14 @@ export default function SingleProduct(props) {
         width="200"
         height="200"
       />
-      <Product clickHandler={() => handleClick()} productPrice={productPrice} />
-      <div>name: {props.product.name}</div>
+
+      <p> </p>
+      <Product
+        clickHandler={handleClick}
+        productPrice={productAmount}
+        quantity={quantity}
+        setQuantity={setQuantity}
+      />
     </Layout>
   );
 }

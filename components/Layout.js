@@ -8,7 +8,7 @@ const childrenStyle = css`
 export default function Layout(props) {
   return (
     <>
-      <Header />
+      <Header quantity={props.quantity} />
       <main css={childrenStyle}>{props.children}</main>
     </>
   );

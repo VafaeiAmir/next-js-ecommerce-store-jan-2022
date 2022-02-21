@@ -1,11 +1,11 @@
+import Cookies from 'js-cookie';
 import Layout from '../components/Layout';
 
 export default function Cart() {
+  const cartQuantity = JSON.parse(Cookies.get('Cart') || '0');
   return (
-    <Layout>
-      <h1>Thank you for the purchase</h1>
-      <p>This is the Shopping page</p>
-      <button>Remove</button>
+    <Layout quantity={cartQuantity}>
+      <button>{cartQuantity}</button>
     </Layout>
   );
 }

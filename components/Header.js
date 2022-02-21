@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import Cookies from 'js-cookie';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { getLocalStorage, setLocalStorage } from '../util/localStorage';
@@ -20,8 +21,11 @@ const headerStyles = (DarkMode) => {
     }
   `;
 };
-export default function Header() {
+
+export default function Header(props) {
   const [darkMode, setDarkMode] = useState(false);
+  // const cartQuantity =
+  // JSON.parse(Cookies.get('Cart') || '[]') || props.quantity;
 
   function darkModeToggle() {
     const newDarkMode = !darkMode;
@@ -45,11 +49,8 @@ export default function Header() {
       <Link href="/">
         <a>Home</a>
       </Link>
-      <Link href="./logIn">
-        <a>Log In</a>
-      </Link>
-      <Link href="./cart">
-        <a>Cart</a>
+      <Link href="/cart">
+        <a>Cart {props.quantity}</a>
       </Link>
     </header>
   );

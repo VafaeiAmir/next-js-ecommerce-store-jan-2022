@@ -1,3 +1,5 @@
+import styles from '../styles/Home.module.css';
+
 export function Counter({ minValue = 1, currentValue, newValueSetter }) {
   function addCounter() {
     newValueSetter(currentValue + 1);
@@ -10,9 +12,13 @@ export function Counter({ minValue = 1, currentValue, newValueSetter }) {
   }
   return (
     <>
-      <button onClick={subtractCounter}>-</button>
+      <button onClick={subtractCounter} className={styles.button}>
+        -
+      </button>
       <span>{currentValue}</span>
-      <button onClick={addCounter}>+</button>
+      <button onClick={addCounter} className={styles.button}>
+        +
+      </button>
     </>
   );
 }
