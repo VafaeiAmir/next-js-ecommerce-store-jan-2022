@@ -7,9 +7,11 @@ import styles from '../styles/Home.module.css';
 import productsDatabase from '../util/database';
 
 export default function Home(props) {
+  console.log(props.owner);
   const [likedArray, setLikedArray] = useState(props.likedProducts);
 
   const initialCartQuantity = JSON.parse(Cookies.get('Cart') || '0');
+
   function toogleProductLike(id) {
     // 1.get the value of the cookie
     const cookieValue = JSON.parse(Cookies.get('likedProducts') || '[]');
@@ -76,6 +78,8 @@ export default function Home(props) {
             return likedObject.id === product.id;
           });
 
+          console.log(productIsLiked);
+
           return (
             <div key={`product-${product.id}`} className={styles.card}>
               <Image
@@ -99,6 +103,8 @@ export default function Home(props) {
 
 export function getServerSideProps(context) {
   const likedProductsOnCookies = context.req.cookies.likedProducts || '[]';
+  const addedToCartOnCookies = context.req.cookies.addedToCart || '[]';
+  const addedToCart = JSON.parse(addedToCartOnCookies);
 
   // if there is no likedProducts cookie on the browser we store to an [] otherwise we get the cookie value and parse it
   const likedProducts = JSON.parse(likedProductsOnCookies);
@@ -109,6 +115,7 @@ export function getServerSideProps(context) {
     props: {
       products: productsDatabase,
       likedProducts: likedProducts,
+      addedToCart: addedToCart,
     },
   };
 }

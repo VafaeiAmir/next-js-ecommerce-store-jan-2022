@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
-import Cookies from 'js-cookie';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { getParsedCookie } from '../util/cookies';
 import { getLocalStorage, setLocalStorage } from '../util/localStorage';
 
 const headerStyles = (DarkMode) => {
@@ -22,8 +22,11 @@ const headerStyles = (DarkMode) => {
   `;
 };
 
-export default function Header(props) {
+export default function Header() {
   const [darkMode, setDarkMode] = useState(false);
+
+  const cartItems = getParsedCookie('addedToCart') || [];
+
   // const cartQuantity =
   // JSON.parse(Cookies.get('Cart') || '[]') || props.quantity;
 
@@ -49,8 +52,8 @@ export default function Header(props) {
       <Link href="/">
         <a>Home</a>
       </Link>
-      <Link href="/cart">
-        <a>Cart {props.quantity}</a>
+      <Link href="/cart" data-test-id="cart-link">
+        <a>Cart ({cartItems.reduce((a, c) => a + c.amount, 0)})</a>
       </Link>
     </header>
   );
