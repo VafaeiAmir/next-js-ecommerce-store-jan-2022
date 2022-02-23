@@ -7,7 +7,6 @@ import styles from '../styles/Home.module.css';
 import productsDatabase from '../util/database';
 
 export default function Home(props) {
-  console.log(props.owner);
   const [likedArray, setLikedArray] = useState(props.likedProducts);
 
   const initialCartQuantity = JSON.parse(Cookies.get('Cart') || '0');
@@ -16,7 +15,6 @@ export default function Home(props) {
     // 1.get the value of the cookie
     const cookieValue = JSON.parse(Cookies.get('likedProducts') || '[]');
 
-    // console.log('current cookie value', cookieValue);
     // 2.update the cookie
 
     Cookies.set('likedProducts', JSON.stringify(cookieValue));

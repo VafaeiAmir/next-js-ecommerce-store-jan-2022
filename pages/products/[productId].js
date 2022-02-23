@@ -7,13 +7,6 @@ import Layout from '../../components/Layout';
 import { getParsedCookie, setParsedCookie } from '../../util/cookies';
 import productsDatabase from '../../util/database';
 
-// import productsDatabase from '../../util/database';
-
-// const productAmount = {
-//   currency: 'eur',
-//   unitAmount: 20000,
-// };
-
 export default function SingleProduct(props) {
   const [amount, setAmount] = useState(1);
   const cartItems = getParsedCookie('addedToCart') || [];
@@ -47,13 +40,6 @@ export default function SingleProduct(props) {
       (cookieObject) => cookieObject.id !== id,
     );
 
-    // const [quantityArray, setQuantityArray] = useState(props.likedProducts);
-
-    // const currentProductObject = quantityArray.find(
-    //   (cookieObject) => cookieObject.id === props.product.id,
-    // );
-    // console.log(currentProductObject);
-
     let newCookie;
     // if cookie id exists, update amount
     if (idExistInArray) {
@@ -80,30 +66,6 @@ export default function SingleProduct(props) {
     setParsedCookie('addedToCart', newCookie);
     setCart(newCookie);
   }
-
-  //   // if is the object of the product on this page update quantity
-  //   if (cookieObject.id === props.product.id) {
-  //     return { ...cookieObject, quantity: cookieObject + 1 };
-  //   } else {
-  //     // if is not the object of the product on this page don't do anything
-  //     return cookieObject;
-  //   }
-  // });
-  // 3. update cookie and state
-  // setQuantityArray(newCookie || []);
-
-  //   Cookies.set('quantityProducts', JSON.stringify(newCookie));
-  // }
-
-  // const cookieValue = JSON.parse(Cookies.get('Cart') || '0');
-
-  // const [quantity, setQuantity] = useState(cookieValue || 0);
-
-  // function handleClick(mode, price, cartQuantity) {
-  //   // console.log('buy');
-  //   Cookies.set('Cart', JSON.stringify(cartQuantity));
-  //   console.log('quantity', cartQuantity);
-  // }
 
   return (
     <Layout>
@@ -139,21 +101,6 @@ export default function SingleProduct(props) {
           </button>
         </div>
       </div>
-      <p> </p>
-      {/* <div>id: {props.product.id}</div>
-      <div>name: {props.product.name}</div>
-      <div>price: {props.product.price}</div> */}
-      {/* <button onClick={() => sendToCart}>
-          Add to cart{' '}
-          {currentProductObject ? currentProductObject.id : 'not followed'}
-        </button> */}
-
-      {/* <Product
-          clickHandler={handleClick}
-          productPrice={productAmount}
-          quantity={quantity}
-          setQuantity={setQuantity}
-        /> */}
     </Layout>
   );
 }
@@ -183,21 +130,3 @@ export function getServerSideProps(context) {
     },
   };
 }
-//   export async function getServerSideProps(context) {
-//     // product list
-//     const productId = context.query.productId;
-//     // const Product = await getProductById(productId);
-//     // 1. get the cookies from the browser
-//     // 2. pass the cookies to the frontend
-//     const addedToCartOnCookies = context.req.cookies.addedToCart || '[]';
-//     // if there is no addedToCart cookie on the browser we store to an [] otherwise we get the cooke value and parse it
-//     const addedToCart = JSON.parse(addedToCartOnCookies);
-
-//     return {
-//       props: {
-//         products: productsDatabase,
-//         addedToCart: addedToCart,
-//       },
-//     };
-//   }
-// }
