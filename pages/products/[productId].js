@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
 import Layout from '../../components/Layout';
+import styles from '../../styles/Home.module.css';
 // import { Product } from '../../components/Product';
 import { getParsedCookie, setParsedCookie } from '../../util/cookies';
 import productsDatabase from '../../util/database';
@@ -82,7 +83,7 @@ export default function SingleProduct(props) {
         width="200"
         height="200"
       />
-      <div>
+      <div className={styles.PrQuAd}>
         <p> </p>
         <div data-test-id="product-price">
           {props.product.price / 1} € Price
@@ -94,6 +95,7 @@ export default function SingleProduct(props) {
           <button onClick={() => handleIncrementAmount()}>+</button>
           <p> </p>
           <button
+            className={styles.addButton}
             data-test-id="product-add-to-cart"
             onClick={() => clickAddToCart(props.product.id)}
           >

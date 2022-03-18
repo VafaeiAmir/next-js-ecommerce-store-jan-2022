@@ -18,6 +18,7 @@ function MyApp({ Component, pageProps }) {
           }
         `}
       />
+
       <Component owner="amir" {...pageProps} />
     </>
   );

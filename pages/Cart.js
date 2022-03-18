@@ -40,7 +40,7 @@ export default function Cart() {
                 width="200"
                 height="200"
               />
-              €{item.amount * productPrice[item.id - 1]}
+              Price €{item.amount * productPrice[item.id - 1]}
               <div>{item.amount}</div>
               <Link href={`/products/${item.id}`}>
                 <a>{item.name}</a>
@@ -50,7 +50,12 @@ export default function Cart() {
         })}
       </div>
 
-      <button onClick={() => deleteFromCart(cartItems.id)}>x</button>
+      <button
+        onClick={() => deleteFromCart(cartItems.id)}
+        className={styles.deleteButton}
+      >
+        Remove all
+      </button>
     </Layout>
   );
 }

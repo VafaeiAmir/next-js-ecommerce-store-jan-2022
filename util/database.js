@@ -1,7 +1,22 @@
+// import { config } from 'dotenv-safe';
+// import postgres from 'postgres';
 import img1 from '../public/product-pic/1.jpg';
 import img2 from '../public/product-pic/2.jpg';
 import img3 from '../public/product-pic/3.jpg';
 import img4 from '../public/product-pic/4.jpg';
+
+// Read the environment variables from the .env
+// file, which will then be available for all
+// following code
+// config();
+
+// const sql = postgres();
+
+// const products = await sql`
+// SELECT * FROM products
+// `;
+
+// console.log('products', products);
 
 const productsDatabase = [
   {
