@@ -1,10 +1,9 @@
-// import Cookies from 'js-cookie';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
 import Layout from '../../components/Layout';
 import styles from '../../styles/Home.module.css';
-// import { Product } from '../../components/Product';
+
 import { getParsedCookie, setParsedCookie } from '../../util/cookies';
 import productsDatabase from '../../util/database';
 
