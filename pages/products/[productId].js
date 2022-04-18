@@ -75,8 +75,8 @@ export default function SingleProduct(props) {
         </title>
         <meta description={`${props.product.name} `} />
       </Head>
-      <h1>{props.product.name}</h1>
-      <h2>{props.product.text}</h2>
+      <h1 className={styles.productName}>{props.product.name}</h1>
+      <h2 className={styles.productName}>{props.product.text}</h2>
       <Image
         src={`/product-pic/${props.product.id}.jpg`}
         width="200"

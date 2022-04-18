@@ -49,19 +49,19 @@ export default function Home(props) {
         <img
           src="/HomeDesign.jpg"
           alt="A colorful console controller "
-          width={350}
+          width={330}
           height={140}
         />
         <img
           src="/HomeDesign2.jpg"
           alt="A room with a big gaming screen "
-          width={350}
+          width={330}
           height={140}
         />
         <img
           src="/Players.jpg"
           alt="tow persons playing a game with one of those consoles"
-          width={350}
+          width={330}
           height={140}
         />
       </div>
